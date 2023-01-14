@@ -1,12 +1,12 @@
 function runningSum(nums: number[]): number[] {
 
-    for (let i = 0; i < nums.length; i++) {
+    var acc: number = 0;
 
-        const pv: number = nums[i-1] || 0
+    return nums.map<number>(elem => {
 
-        nums[i] = nums[i] + pv;
+        acc = acc + elem;
 
-    };
+        return acc;
 
-    return nums;
+    });
 };
