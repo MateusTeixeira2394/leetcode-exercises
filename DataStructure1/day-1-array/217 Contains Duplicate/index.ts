@@ -1,14 +1,16 @@
 function containsDuplicate(nums: number[]): boolean {
 
-    var distinctNumbers: number[] = [];
+    let map: Map<string, number> = new Map();
 
     for (let i = 0; i < nums.length; i++) {
 
-        if(distinctNumbers.some(elem => elem === nums[i])){
+        let currValue: number = nums[i]
+
+        if (map.get(currValue.toString())) {
             return true;
-        } else {
-            distinctNumbers.push(nums[i]);
         }
+
+        map.set(currValue.toString(), 1);
 
     }
 
